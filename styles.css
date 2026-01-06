@@ -1,0 +1,166 @@
+:root{
+  --max-w:1200px;
+  --accent:#0b6b4a;
+  --accent-2:#06d6a0;
+  --muted:#b4c0c8;
+  --white:#ffffff;
+  --card-radius:16px;
+  --transition: 420ms cubic-bezier(.2,.9,.3,1);
+  --header-h:86px; /* header height used to calculate service card height */
+  --service-gap:0px; /* gap between service cards; set 0 so one fills viewport */
+}
+
+/* Global & Background */
+*{box-sizing:border-box}
+html { scroll-behavior: smooth; } /* smooth scroll for anchors */
+html,body{height:100%;margin:0}
+body{
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+  color:var(--white);
+  background-image: url('assets/trucks.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+}
+
+/* overlay to keep text readable */
+body::after{
+  content:"";
+  position:fixed;inset:0;
+  background: linear-gradient(180deg, rgba(2,6,23,0.45), rgba(2,6,23,0.55));
+  z-index:0;pointer-events:none;
+}
+
+/* Container */
+.container{max-width:var(--max-w);margin:0 auto;padding:20px;position:relative;z-index:2}
+
+/* Header (shorter, transparent, fixed) */
+.site-header{
+  position:fixed;top:0;left:0;right:0;
+  z-index:100;
+  background:transparent;
+  padding:6px 0;
+  height:var(--header-h);
+  display:flex;
+  align-items:center;
+  backdrop-filter: blur(6px);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px}
+
+/* Brand */
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.logo{
+  width:72px;height:72px;object-fit:contain;border-radius:8px;background:transparent;padding:0;box-shadow:0 8px 30px rgba(0,0,0,0.45);
+}
+.title{display:flex;flex-direction:column}
+.company-fr,.company-ar{font-weight:800;font-size:16px;line-height:1}
+.company-ar{font-family:'Cairo', sans-serif;font-size:15px}
+
+/* Nav */
+.nav-list{list-style:none;padding:0;margin:0;display:flex;gap:14px;align-items:center}
+.nav-link{
+  color:var(--white);text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600;transition:background var(--transition);
+  background:rgba(255,255,255,0.03);
+}
+.nav-link:hover{background:rgba(255,255,255,0.06)}
+.header-actions{display:flex;gap:12px;align-items:center}
+
+/* Lang & WhatsApp */
+.lang-switch{display:flex;gap:8px}
+.lang-btn{background:rgba(255,255,255,0.03);border:0;color:#fff;padding:8px 10px;border-radius:8px;cursor:pointer;font-weight:700}
+.lang-btn.active{background:var(--white);color:var(--accent)}
+.whatsapp-cta{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:10px;background:linear-gradient(90deg,var(--accent-2),var(--accent));color:#04201a;text-decoration:none;font-weight:700;box-shadow:0 8px 22px rgba(3,59,43,0.18)}
+.whatsapp-cta svg{fill:currentColor}
+
+/* Main hero */
+.hero{padding-top:calc(var(--header-h) + 14px);padding-bottom:40px}
+.hero-title{font-size:22px;max-width:920px;font-weight:600;text-shadow:0 6px 24px rgba(0,0,0,0.6)}
+.hero-cta{margin-top:18px;display:flex;gap:12px;align-items:center}
+.btn-primary{background:linear-gradient(90deg,var(--accent-2),var(--accent));color:#04201a;padding:12px 16px;border-radius:12px;text-decoration:none;font-weight:800;box-shadow:0 12px 30px rgba(2,8,18,0.28)}
+.btn-outline{background:rgba(255,255,255,0.06);color:var(--white);padding:12px 14px;border-radius:12px;text-decoration:none;font-weight:700}
+
+/* SERVICES - make each card fill viewport (minus header) */
+.section-title{font-size:20px;font-weight:800;margin-bottom:0.6rem}
+.services-list{
+  display:flex;
+  flex-direction:column;
+  gap:var(--service-gap);
+  /* we don't set overflow, so page scroll remains standard (no internal scrollbars) */
+}
+
+/* each service card fills remaining viewport height (stable single-card view) */
+.service-card{
+  position:relative;
+  min-height: calc(100vh - var(--header-h));
+  border-radius:0; /* full-width feel */
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  padding:calc(40px + 20px) 24px; /* keeps content visible and not touching top */
+  color:#fff;
+  background-size:cover;
+  background-position:center;
+  transition: transform 480ms cubic-bezier(.2,.9,.3,1), opacity 360ms, filter 360ms;
+  transform: translateY(20px) scale(.995);
+  opacity:0.02;
+  filter: blur(4px) saturate(.9);
+  box-shadow:none;
+}
+
+/* overlay for contrast */
+.service-overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.28), rgba(0,0,0,0.55));mix-blend-mode:multiply}
+.service-content{position:relative;z-index:2;max-width:900px}
+.service-title{font-size:28px;margin:0 0 12px;font-weight:900}
+.service-desc{margin:0;color:rgba(255,255,255,0.95);font-size:16px;line-height:1.6}
+
+/* active card - vivid and crisp */
+.service-card.active{
+  transform: translateY(0) scale(1);
+  opacity:1;
+  filter: blur(0) saturate(1.05);
+  box-shadow: 0 32px 80px rgba(2,8,18,0.6);
+}
+
+/* CONTACT section - black */
+.contact-section{background:#000;padding-top:28px;padding-bottom:36px;margin-top:0;border-top-left-radius:18px;border-top-right-radius:18px}
+.contact-grid{display:grid;grid-template-columns:1fr 420px;gap:22px;align-items:start;margin-top:12px}
+.label{font-weight:900;margin-bottom:6px;color:#fff}
+.value{margin-bottom:14px;color:#dbe7ec}
+.vertical-phones{list-style:none;padding:0;margin:8px 0}
+.vertical-phones li{margin-bottom:10px}
+.vertical-phones a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:var(--white);background:rgba(255,255,255,0.02);padding:10px;border-radius:10px;font-weight:600}
+.icon-phone,.icon-mail,.icon-pin{opacity:0.95;display:inline-block;vertical-align:middle}
+.map-placeholder{background:rgba(255,255,255,0.02);padding:16px;border-radius:12px;display:flex;align-items:center;gap:10px}
+.map-link{display:inline-flex;align-items:center;gap:8px;color:var(--white);text-decoration:none;font-weight:700}
+.address-link{display:inline-flex;align-items:center;gap:8px;color:var(--white);text-decoration:none;font-weight:700}
+.address-link svg{display:inline-block;vertical-align:middle}
+
+/* Footer */
+.site-footer{padding:28px 0;text-align:center;color:rgba(255,255,255,0.85);font-size:14px;background:#000}
+
+/* Reveal */
+.reveal-up{transform: translateY(18px);opacity:0;transition:transform 520ms cubic-bezier(.2,.9,.3,1),opacity 420ms}
+.reveal-up.in-view{transform:none;opacity:1}
+.reveal-up.delay-1{transition-delay:140ms}
+
+/* Responsive adjustments */
+@media (max-width:900px){
+  .logo{width:60px;height:60px}
+  .hero-title{font-size:18px}
+  .service-title{font-size:22px}
+  .service-card{padding:calc(24px + 16px) 18px;min-height: calc(100vh - var(--header-h) - 30px)}
+  .contact-grid{grid-template-columns:1fr}
+  .contact-right iframe{height:220px}
+}
+@media (max-width:480px){
+  .nav-list{display:none} /* mobile: keep header compact; add hamburger later if desired */
+  .hero{padding-top:calc(var(--header-h) + 6px);padding-bottom:20px}
+  .service-title{font-size:20px}
+  .service-desc{font-size:15px}
+  .service-card{padding:18px;min-height: calc(100vh - var(--header-h) - 24px)}
+}

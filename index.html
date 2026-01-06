@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TRANS PROSIM PLANAT — شركة بروسيم للنقل والتصدير</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header (shorter, transparent, fixed) -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="Accueil">
+        <img src="assets/logo.png" alt="TRANS PROSIM PLANAT logo" class="logo">
+        <div class="title">
+          <div class="company-fr" data-fr="TRANS PROSIM PLANAT" data-ar="TRANS PROSIM PLANAT">TRANS PROSIM PLANAT</div>
+          <div class="company-ar" data-fr="شركة بروسيم للنقل والتصدير" data-ar="شركة بروسيم للنقل والتصدير">شركة بروسيم للنقل والتصدير</div>
+        </div>
+      </a>
+
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link" data-fr="Home" data-ar="الرئيسية">Home</a></li>
+          <li><a href="#services" class="nav-link" data-fr="Nos services" data-ar="خدماتنا">Nos services</a></li>
+          <li><a href="#contact" class="nav-link" data-fr="Nous contactez" data-ar="اتصل بنا">Nous contactez</a></li>
+          <li><a class="nav-link" href="https://www.facebook.com/profile.php?id=61584903862629" target="_blank" rel="noopener noreferrer" data-fr="Pages" data-ar="الصفحات">Pages</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-switch" role="tablist" aria-label="Lang switch">
+          <button id="btn-fr" class="lang-btn active" aria-pressed="true">FR</button>
+          <button id="btn-ar" class="lang-btn" aria-pressed="false">AR</button>
+        </div>
+
+        <!-- WhatsApp CTA small (script sets real link) -->
+        <a id="whatsapp-header" class="whatsapp-cta" href="#" aria-label="Contact via WhatsApp" target="_blank" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.52 3.48A11.94 11.94 0 0012 1C6.486 1 2 5.486 2 11c0 1.936.51 3.83 1.48 5.48L2 23l6.74-1.75A11.92 11.92 0 0012 23c5.514 0 10-4.486 10-10 0-1.86-.49-3.61-1.48-5.52zM12 21c-.86 0-1.71-.14-2.52-.41l-.18-.06L6 20l.58-2.34-.12-.2A9.02 9.02 0 013 11c0-4.97 4.03-9 9-9s9 4.03 9 9-4.03 9-9 9zm4.07-6.93c-.19-.09-1.13-.56-1.3-.62-.17-.06-.3-.09-.43.09-.13.18-.5.62-.6.75-.11.12-.22.14-.41.05-.19-.09-.8-.29-1.52-.93-.56-.5-.94-1.12-1.05-1.31-.11-.19-.01-.29.08-.38.08-.08.19-.2.29-.31.09-.11.12-.19.18-.31.06-.12.03-.23-.01-.32-.04-.09-.43-1.03-.59-1.41-.15-.38-.31-.33-.43-.33-.11 0-.24 0-.37 0-.12 0-.32.05-.49.23-.17.18-.65.64-.65 1.56s.67 1.81.76 1.93c.09.12 1.32 2.05 3.2 2.87 1.88.83 1.88.55 2.22.52.34-.03 1.1-.44 1.26-.86.17-.42.17-.78.12-.86-.05-.09-.19-.13-.38-.22z"/></svg>
+          <span data-fr="WhatsApp" data-ar="واتساب">WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main id="home">
+    <!-- HERO -->
+    <section class="hero section">
+      <div class="container hero-inner">
+        <h1 class="hero-title reveal-up"
+            data-fr="Transport de marchandises sur toutes distances et location de tous les engins de travaux publics, de remorquage et de garage."
+            data-ar="نقل البضائع على جميع المسافات و كراء جميع الآلات الأشغال العمومية و الجر و الرآب. ">
+        </h1>
+
+        <div class="hero-cta reveal-up delay-1">
+          <a class="btn-primary" href="#services" data-fr="Voir nos services" data-ar="عرض خدماتنا">Voir nos services</a>
+          <a id="cta-whatsapp" class="btn-outline" href="#" target="_blank" rel="noopener noreferrer" data-fr="Contactez-nous (WhatsApp)" data-ar="اتصل بنا (واتساب)">Contactez-nous (WhatsApp)</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES - each card fills viewport (minus header) so 1 per screen -->
+    <section id="services" class="section services-section">
+      <div class="container">
+        <h2 class="section-title reveal-up" data-fr="Nos services" data-ar="خدماتنا">Nos services</h2>
+
+        <div class="services-list">
+          <!-- service 1 -->
+          <article class="service-card" data-index="1"
+                   data-fr-title="Transport de marchandises sur toutes distances"
+                   data-ar-title="نقل البضائع على جميع المسافات"
+                   style="background-image:url('assets/service1.jpg')">
+            <div class="service-overlay"></div>
+            <div class="service-content">
+              <h3 class="service-title"></h3>
+              <p class="service-desc" data-fr="Solutions de transport fiables pour toute distance." data-ar="حلول نقل موثوقة لجميع المسافات."></p>
+            </div>
+          </article>
+
+          <!-- service 2 -->
+          <article class="service-card" data-index="2"
+                   data-fr-title="Location de tous engins"
+                   data-ar-title="كراء جميع الآلات"
+                   style="background-image:url('assets/service2.jpg')">
+            <div class="service-overlay"></div>
+            <div class="service-content">
+              <h3 class="service-title"></h3>
+              <p class="service-desc" data-fr="Location d'engins pour travaux publics et chantiers." data-ar="كراء الآلات للأشغال العمومية وورش العمل."></p>
+            </div>
+          </article>
+
+          <!-- service 3 -->
+          <article class="service-card" data-index="3"
+                   data-fr-title="Travaux publics"
+                   data-ar-title="الأشغال العمومية"
+                   style="background-image:url('assets/service3.jpg')">
+            <div class="service-overlay"></div>
+            <div class="service-content">
+              <h3 class="service-title"></h3>
+              <p class="service-desc" data-fr="Réalisation des travaux publics et manutention." data-ar="تنفيذ الأشغال العمومية و المناولة."></p>
+            </div>
+          </article>
+
+          <!-- service 4 -->
+          <article class="service-card" data-index="4"
+                   data-fr-title="Remorquage et réparation"
+                   data-ar-title="الجر و الإصلاح"
+                   style="background-image:url('assets/service4.png')">
+            <div class="service-overlay"></div>
+            <div class="service-content">
+              <h3 class="service-title"></h3>
+              <p class="service-desc" data-fr="Service de remorquage et réparations sur place." data-ar="خدمة الجر و الإصلاح في الموقع."></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT (solid black background to footer) -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <h2 class="section-title reveal-up" data-fr="Contact" data-ar="اتصل">Contact</h2>
+
+        <div class="contact-grid reveal-up">
+          <div class="contact-left">
+            <!-- Address title -->
+            <p class="label" data-fr="Adresse" data-ar="العنوان">Adresse</p>
+
+            <!-- Entire address line clickable (icon + text) -->
+            <p class="value">
+              <a class="address-link" href="https://www.google.com/maps/place/Oran,+Algeria" target="_blank" rel="noopener noreferrer" aria-label="Voir Oran sur Google Maps">
+                <svg class="icon-pin" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2C8.14 2 5 5.14 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.86-3.14-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
+                <span data-fr="Oran, Algérie" data-ar="وهران، الجزائر">Oran, Algérie</span>
+              </a>
+            </p>
+
+            <!-- Phones -->
+            <p class="label" data-fr="Téléphones" data-ar="الهاتف">Téléphones</p>
+            <ul class="vertical-phones">
+              <li>
+                <a href="tel:+213550665537">
+                  <svg class="icon-phone" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 22 2 13.93 2 3.5A1 1 0 013 2.5H6.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57.12.35.06.74-.24 1.01l-2.21 2.21z"/></svg>
+                  +213 550 665 537
+                </a>
+              </li>
+              <li>
+                <a href="tel:+213698342901">
+                  <svg class="icon-phone" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 22 2 13.93 2 3.5A1 1 0 013 2.5H6.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57.12.35.06.74-.24 1.01l-2.21 2.21z"/></svg>
+                  +213 698 342 901
+                </a>
+              </li>
+              <li>
+                <a href="tel:+213792428121">
+                  <svg class="icon-phone" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 22 2 13.93 2 3.5A1 1 0 013 2.5H6.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57.12.35.06.74-.24 1.01l-2.21 2.21z"/></svg>
+                  +213 792 428 121
+                </a>
+              </li>
+            </ul>
+
+            <!-- WhatsApp -->
+            <p class="label" data-fr="WhatsApp" data-ar="واتساب">WhatsApp</p>
+            <p class="value">
+              <a id="whatsapp-link-2" href="#" target="_blank" rel="noopener noreferrer" data-fr="Contacter sur WhatsApp" data-ar="الاتصال عبر واتساب">Contacter sur WhatsApp</a>
+            </p>
+
+            <!-- Email -->
+            <p class="label" data-fr="Email" data-ar="البريد">Email</p>
+            <p class="value">
+              <a id="email-link" href="mailto:prosimplanet31@gmail.com">
+                <svg class="icon-mail" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                prosimplanet31@gmail.com
+              </a>
+            </p>
+          </div>
+
+          <!-- contact-right intentionally empty -->
+          <div class="contact-right"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>&copy; <span id="year"></span> TRANS PROSIM PLANAT — شركة بروسيم للنقل والتصدير</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

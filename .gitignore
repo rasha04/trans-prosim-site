@@ -1,0 +1,8 @@
+# VS Code settings
+.vscode/
+
+# system files
+.DS_Store
+
+# node deps (if you later add node)
+node_modules/
